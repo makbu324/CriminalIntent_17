@@ -114,6 +114,11 @@ class CrimeDetailFragment : Fragment() {
                 null
             )
             crimeCamera.isEnabled = canResolveIntent(captureImageIntent)
+
+            // Edit here...
+            crimePhoto.setOnClickListener {
+
+            }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {

@@ -118,7 +118,14 @@ class CrimeDetailFragment : Fragment() {
 
             // Edit here...
             crimePhoto.setOnClickListener {
-                Log.d("TEST", "HIIIIFAJDSKO")
+                val photoFile = File(requireContext().applicationContext.filesDir, photoName)
+                val photoUri = FileProvider.getUriForFile(
+                    requireContext(),
+                    "com.bignerdranch.android.criminalintent.fileprovider",
+                    photoFile
+                )
+                val pictureDialog = PictureDialog(photoUri)
+                pictureDialog.show(parentFragmentManager, "PictureDialog")
             }
         }
 
